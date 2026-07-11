@@ -1,56 +1,71 @@
 # Task Manager API
 
-A Task Manager web application built with **FastAPI**, featuring a REST API, a simple SPA frontend, SQLite persistence, and automated tests.
+A task management web application built with **FastAPI**, featuring a RESTful API, a Single Page Application (SPA) frontend, SQLite persistence, and automated testing.
 
-## Features
-
-* Create tasks
-* Edit tasks
-* Delete tasks
-* Mark tasks as completed
-* List all tasks
-* Responsive HTML/CSS frontend
-* JavaScript SPA using the Fetch API
-* SQLite database
-* Logging middleware
-* RESTful API
-* Unit and API tests with Pytest
+This project was developed to practice backend development with FastAPI while also implementing a modern frontend using HTML, CSS, JavaScript, and the Fetch API.
 
 ---
 
-# Technologies
+## Features
+
+* ✅ Create tasks
+* ✏️ Edit tasks
+* 🗑️ Delete tasks
+* ✔️ Mark tasks as completed
+* 📋 List all tasks
+* 🎨 Responsive SPA interface
+* 📝 Request logging
+* ⚠️ Exception handling
+* 🧪 Unit and API tests
+* 📚 Automatic API documentation
+
+---
+
+## Technologies
+
+### Backend
 
 * Python 3
 * FastAPI
 * SQLite
-* Jinja2 Templates
+* Jinja2
+* Pydantic
+
+### Frontend
+
 * HTML5
 * CSS3
 * JavaScript (Fetch API)
+
+### Testing
+
 * Pytest
+* HTTPX
+* Pytest Coverage
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```text
-GestorTarefas/
+TaskManager/
 │
-├── main.py                    
+├── main.py                     
 ├── gestor_tarefas.py           
 ├── logger_config.py            
 ├── cli.py
 ├── database.py
-├── tarefas.py
-├── tarefas.db
-├── tarefas.json
+├── tarefa.py
+├── tarefa.db
+├── tarefa.json
+├── app.log
 ├── README.md
 │
 ├── static/
 │   ├── css/
 │   │   └── style.css
-│   └── scripts/
-│       ├── app.js
+│   └── js/
+│       └── app.js
 │
 ├── templates/
 │   ├── index.html
@@ -63,22 +78,33 @@ GestorTarefas/
 
 ---
 
-# Installation
+## Installation
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/ClebasS/GestorTarefas.git
-cd GestorTarefas
+git clone https://github.com/ClebasS/TaskManager.git
+cd TaskManager
 ```
 
-Create and activate a virtual environment.
+Create a virtual environment:
+
+```bash
+python -m venv .venv
+```
+
+Activate it.
 
 ### Windows
 
 ```bash
-python -m venv .venv
 .venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+source .venv/bin/activate
 ```
 
 Upgrade pip:
@@ -87,17 +113,17 @@ Upgrade pip:
 python -m pip install --upgrade pip
 ```
 
-Install the required packages:
+Install all dependencies:
 
 ```bash
-pip install fastapi uvicorn jinja2 httpx pytest pytest-cov
+pip install -r requirements.txt
 ```
 
 ---
 
-# Running the Application
+## Running the Application
 
-Start the development server:
+Start the FastAPI development server:
 
 ```bash
 uvicorn main:app --reload
@@ -109,71 +135,70 @@ The application will be available at:
 http://127.0.0.1:8000
 ```
 
-Interactive API documentation:
-
-```
-http://127.0.0.1:8000/docs
-```
-
-Alternative ReDoc documentation:
-
-```
-http://127.0.0.1:8000/redoc
-```
-
 ---
 
-# API Documentation
+## API Documentation
 
 FastAPI automatically generates interactive documentation.
 
-```Swagger UI
+### Swagger UI
+
+```
 http://127.0.0.1:8000/docs
-```ReDoc
+```
+
+### ReDoc
+
+```
 http://127.0.0.1:8000/redoc
 ```
 
 ---
 
-# Running Tests
+## Running Tests
 
 Run all tests:
 
+```bash
 pytest
+```
 
 Generate a coverage report:
 
+```bash
 pytest --cov
 ```
 
 ---
 
-# API Endpoints
-Method	Endpoint	Description
-GET	/	Web interface
-GET	/tarefas	List all tasks
-POST	/tarefas	Create a task
-PUT	/tarefas/{id}	Update a task
-DELETE	/tarefas/{id}	Delete a task
-```
+## API Endpoints
+
+| Method | Endpoint        | Description    |
+| ------ | --------------- | -------------- |
+| GET    | `/`             | Web interface  |
+| GET    | `/tarefas`      | List all tasks |
+| POST   | `/tarefas`      | Create a task  |
+| PUT    | `/tarefas/{id}` | Update a task  |
+| DELETE | `/tarefas/{id}` | Delete a task  |
 
 ---
 
-# Current Functionality
+## Current Functionality
 
-* Create new tasks
-* Edit existing tasks
+* Create tasks
+* Edit tasks
 * Delete tasks
 * Mark tasks as completed
-* View all tasks
-* Logging of HTTP requests
+* Request logging
 * Exception handling
-* REST API
 * SPA frontend
+* RESTful API
+* SQLite persistence
+* Automated testing
 
 ---
 
-# Learning Objectives
+## Learning Objectives
 
 This project was created to practice:
 
@@ -191,36 +216,27 @@ This project was created to practice:
 
 ---
 
-# Planned Improvements
+## Future Improvements
 
-The project is currently under active development. Planned features include:
+Some ideas for future development include:
 
-* User authentication with JWT
-* User registration and login
-* Password hashing
-* Task filtering
-* Task searching
-* Task sorting
-* Dashboard with statistics
-* User-specific tasks
-* History of task changes
-* File attachments
-* Docker support
-* PostgreSQL support
-* Deployment to a cloud platform
-
----
-
-# Testing
-
-The project includes:
-
-* Unit tests
-* API endpoint tests
-* Code coverage reports using Pytest Coverage
+* Role-based authorization (Admin/User)
+* Email verification
+* Password recovery
+* Dark mode
+* Pagination
+* Drag-and-drop task organization
+* Due dates
+* Categories and tags
+* Notifications
+* Calendar integration
+* CI/CD with GitHub Actions
+* Docker Compose
+* PostgreSQL
+* Redis caching
 
 ---
 
-# License
+## License
 
-This project is intended for educational and portfolio purposes.
+This project is intended for educational purposes and as a portfolio project.
