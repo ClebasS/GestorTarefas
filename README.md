@@ -83,7 +83,7 @@ TaskManager/
 Clone the repository:
 
 ```bash
-git clone https://github.com/ClebasS/TaskManager.git
+git clone https://github.com/ClebasS/GestorTarefas.git
 cd TaskManager
 ```
 
